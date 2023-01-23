@@ -10,11 +10,10 @@ no-recommends
 APT::Install-Suggests "false";
 no-suggests
 
-#RUN --mount=type=cache,target=/var/lib/apt/lists \
-#    --mount=type=cache,target=/var/cache \
-#    --mount=type=cache,target=/var/log \
-#    --mount=type=cache,target=/usr/lib/python3/dist-packages/__pycache__ \
-RUN \
+RUN --mount=type=cache,sharing=private,target=/var/lib/apt/lists \
+    --mount=type=cache,sharing=private,target=/var/cache \
+    --mount=type=cache,sharing=private,target=/var/log \
+    --mount=type=cache,sharing=private,target=/usr/lib/python3/dist-packages/__pycache__ \
     <<EOF
 apt-get update
 apt-get -y install \
