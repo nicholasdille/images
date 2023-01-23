@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - ubuntu-22.04/**
+    - .github/workflows/ubuntu-22.04.yml
   pull_request:
     types:
     - opened
@@ -12,6 +13,7 @@ on:
     - reopened
     paths:
     - ubuntu-22.04/**
+    - .github/workflows/ubuntu-22.04.yml
   schedule:
   - cron:  '0 7 * * *'
 
