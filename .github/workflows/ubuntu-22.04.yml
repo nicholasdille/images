@@ -51,7 +51,7 @@ jobs:
         sbom: true
         cache-from: ${{ env.IMAGE_REPOSITORY }}:${{ env.IMAGE_TAG }}
         push: ${{ github.event_name != 'pull_request' }}
-        tags: ${{ env.IMAGE_REPOSITORY }}:${{ env.IMAGE_TAG }}
+        tags: ${{ env.IMAGE_REPOSITORY }}:${{ env.IMAGE_TAG }}, ${{ env.IMAGE_REPOSITORY }}:bionic
 
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@master
