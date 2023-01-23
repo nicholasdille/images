@@ -3,7 +3,7 @@ name: docker-build
 on:
   push:
     paths:
-    - ubuntu-22.04/**
+    - ubuntu/22.04/**
     - .github/workflows/ubuntu-22.04.yml
   pull_request:
     types:
@@ -12,7 +12,7 @@ on:
     - labeled
     - reopened
     paths:
-    - ubuntu-22.04/**
+    - ubuntu/22.04/**
     - .github/workflows/ubuntu-22.04.yml
   schedule:
   - cron:  '0 7 * * *'
@@ -45,7 +45,7 @@ jobs:
     - name: Build
       uses: docker/build-push-action@v3
       with:
-        context: ubuntu-22.04
+        context: ubuntu/22.04
         platforms: linux/amd64,linux/arm64
         provenance: true
         sbom: true
