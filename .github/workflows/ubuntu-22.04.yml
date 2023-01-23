@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOCKER_HUB_USER: nicholasdille
-      IMAGE_REPOSITORY: ${DOCKER_HUB_USER}/ubuntu
+      IMAGE_REPOSITORY: nicholasdille/ubuntu
       IMAGE_TAG: 22.04
     steps:
 
