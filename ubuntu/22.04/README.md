@@ -36,6 +36,11 @@ The container image is rebuilt daily.
 
 Renovate is used to propose an update whenever the upstream tag ubuntu:22.04 is changed (using digesst pinning). The pull request is automatically tested and merged.
 
+The container image comes with build attestation and a Software Bill of Materials (SBoM):
+
+- Show build attestation: `docker buildx imagetools inspect nicholasdille/ubuntu:22.04 --format '{{ json .Provenance }}'`
+- Show SBoM: `docker buildx imagetools inspect nicholasdille/ubuntu:22.04 --format '{{ json .SBOM }}'`
+
 ## License
 
 See [upstream container image](https://hub.docker.com/_/ubuntu)
