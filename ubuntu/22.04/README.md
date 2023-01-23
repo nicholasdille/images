@@ -18,7 +18,7 @@ Opinionated customizations of the [official image for Ubuntu](https://hub.docker
 
 ## Supported tags and respective `Dockerfile` links
 
-- [22.04](https://github.com/nicholasdille/images/blob/main/ubuntu-22.04/Dockerfile)
+- [`22.04`, `bionic`](https://github.com/nicholasdille/images/blob/main/ubuntu-22.04/Dockerfile)
 
 ## Quick reference (cont.)
 
@@ -29,6 +29,12 @@ Opinionated customizations of the [official image for Ubuntu](https://hub.docker
 - Supported architectures:
 
     amd64, arm64
+
+## Security
+
+The container image is rebuilt daily.
+
+Renovate is used to propose an update whenever the upstream tag ubuntu:22.04 is changed (using digesst pinning). The pull request is automatically tested and merged.
 
 ## License
 
