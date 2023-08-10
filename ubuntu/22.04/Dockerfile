@@ -30,6 +30,6 @@ rm /usr/local/sbin/unminimize
 EOF
 
 ARG ref=main
-LABEL org.opencontainers.image.source="https://github.com/nicholasdille/docker-setup" \
+LABEL org.opencontainers.image.source="https://github.com/nicholasdille/images" \
       org.opencontainers.image.title="Ubuntu" \
       org.opencontainers.image.description="Base image for Ubuntu"
