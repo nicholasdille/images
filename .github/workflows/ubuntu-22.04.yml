@@ -34,6 +34,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    - name: Set SOURCE_DATE_EPOCH
+      id: set-source-date-epoch
+      run: |
+        echo "SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)" >>"${GITHUB_ENV}"
+
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
 
@@ -48,6 +53,8 @@ jobs:
 
     - name: Build
       uses: docker/build-push-action@v5
+      env:
+        SOURCE_DATE_EPOCH: ${{ steps.set-source-date-epoch.outputs.SOURCE_DATE_EPOCH }}
       with:
         context: ubuntu/22.04
         platforms: linux/amd64,linux/arm64
